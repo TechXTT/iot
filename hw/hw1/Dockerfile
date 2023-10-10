@@ -32,4 +32,4 @@ ENV PATH=/root/.local/bin:$PATH
 EXPOSE 5001
 
 # Задаваме команда, която да се изпълни при стартиране на контейнера
-CMD ["python", "app.py"]
+CMD ["python","-u","app.py"]

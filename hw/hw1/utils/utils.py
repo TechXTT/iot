@@ -41,7 +41,7 @@ def get_highest_average_temperature(csv_file):
     january_temperatures = df[df['Date'].dt.month == 1]
 
     # calculate the mean temperature for each room
-    mean_temperatures = january_temperatures.mean()
+    mean_temperatures = january_temperatures.drop('Date', axis=1).mean()
 
     # return the room with the highest mean temperature
-    return mean_temperatures.idxmax()
+    return {"Room": mean_temperatures.idxmax(), "Temperature": mean_temperatures.max()}
